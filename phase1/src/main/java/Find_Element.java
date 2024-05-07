@@ -1,6 +1,9 @@
 // you can also use imports, for example:
 import java.util.*;
 
+//javac Hello.java ->
+//java Hello
+
 public class Find_Element {
 
     // you can write to stdout for debugging purposes, e.g.
