@@ -16,26 +16,22 @@ public class Sample {
 
         /*
             System.out.println(findMid(26, 12, 5));
-            System.out.println(findMid(26, 5 , 12));
-            System.out.println(findMid(12,5 , 26));
-            System.out.println(findMid(12,26 , 5));
+            System.out.println(findMid(26, 5, 12));
+            System.out.println(findMid(12, 5, 26));
+            System.out.println(findMid(12, 26, 5));
          */
 
-        //break example
-        for(int i = 0 ; i < 10; i++){
-            if(i == 5){
-                break;
-            }
-            System.out.println(i);
+         // for each
+        int[] arr = new int[]{1,2,3,4,5};
+
+        for(int i=0; i < 5; i++){
+            System.out.println(arr[i]);
         }
 
-        //continue
-        for(int i = 0 ; i < 10; i++){
-            if(i == 5){
-                continue;
-            }
-            System.out.println(i);
+        for(int i : arr){
+            System.out.println(i*i);
         }
+
 
 
     }
