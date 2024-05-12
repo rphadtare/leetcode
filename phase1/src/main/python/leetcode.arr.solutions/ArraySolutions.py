@@ -15,3 +15,4 @@ class Solution:
                 tmp_max_consecutive_one_values = 0
 
         return max_consecutive_one_values
+
