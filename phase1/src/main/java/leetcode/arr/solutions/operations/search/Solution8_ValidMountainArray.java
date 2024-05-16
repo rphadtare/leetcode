@@ -1,4 +1,4 @@
-package leetcode.arr.solutions;
+package leetcode.arr.solutions.operations.search;
 
 public class Solution8_ValidMountainArray {
 
@@ -46,11 +46,7 @@ public class Solution8_ValidMountainArray {
 
             }
 
-            if(peak_reached && result){
-                return true;
-            } else {
-                return false;
-            }
+            return peak_reached && result;
 
 
         } else {

@@ -1,4 +1,4 @@
-package leetcode.arr.solutions;
+package leetcode.arr.solutions.operations.search;
 
 public class Solution7_CheckNandDoubles {
 

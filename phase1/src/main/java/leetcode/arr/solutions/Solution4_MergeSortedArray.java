@@ -49,9 +49,7 @@ public class Solution4_MergeSortedArray {
 
             }
 
-            for(int i=0;i<m+n;i++){
-                nums1[i] = result[i];
-            }
+            if (m + n >= 0) System.arraycopy(result, 0, nums1, 0, m + n);
 
         }
 
