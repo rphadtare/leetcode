@@ -73,4 +73,30 @@ public class Solution6_RemoveDuplicatesSortedArray {
 
     }
 
+    //in place delete operation
+    public int removeDuplicatesInplace(int[] nums) {
+
+        if(nums == null || nums.length == 0){
+            return 0;
+        } else {
+            int length = 1;
+
+            for(int i=1; i < nums.length; i++){
+
+                if(nums[i] != nums[i-1]){
+
+                    nums[length] = nums[i];
+
+                    length++;
+                }
+
+            }
+
+
+            return length;
+        }
+
+
+    }
+
 }
