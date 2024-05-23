@@ -1,4 +1,3 @@
-
 ###
 #
 # Input: nums = [3,2,2,3], val = 3
@@ -23,6 +22,47 @@ def removeElement(nums: list[int], val: int) -> int:
     return write_pointer
 
 
+###
+# Input: heights = [1,1,4,2,1,3]
+# Output: 3
+# Explanation:
+# heights:  [1,1,4,2,1,3]
+# expected: [1,1,1,2,3,4]
+# Indices 2, 4, and 5 do not match.
+#
+# Input: heights = [5,1,2,3,4]
+# Output: 5
+# Explanation:
+# heights:  [5,1,2,3,4]
+# expected: [1,2,3,4,5]
+# All indices do not match.
+#
+#
+# Input: heights = [1,2,3,4,5]
+# Output: 0
+# Explanation:
+# heights:  [1,2,3,4,5]
+# expected: [1,2,3,4,5]
+# All indices match.
+##
+
+def heightChecker(self, heights: list[int]) -> int:
+    expected = heights[0:]
+    count = 0
+    for i in range(0, len(expected)):
+
+        for j in range(i + 1, len(expected)):
+            if expected[i] >= expected[j]:
+                expected[i] += expected[j]
+                expected[j] = expected[i] - expected[j]
+                expected[i] = expected[i] - expected[j]
+
+        if expected[i] != heights[i]:
+            count += 1
+
+    return count
+
+
 class Solution:
     @staticmethod
     def findMaxConsecutiveOnes(nums: list[int]) -> int:
@@ -40,6 +80,3 @@ class Solution:
                 tmp_max_consecutive_one_values = 0
 
         return max_consecutive_one_values
-
-
-
