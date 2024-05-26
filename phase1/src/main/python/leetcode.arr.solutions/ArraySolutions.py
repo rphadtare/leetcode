@@ -140,3 +140,26 @@ def thirdMax(self, nums: list[int]) -> int:
         return max_val
     else:
         return third_max_val
+
+
+##
+#
+# Input: nums = [4,3,2,7,8,2,3,1]
+# Output: [5,6]
+#
+#
+# Input: nums = [1,1]
+# Output: [2]
+#
+# #
+
+def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
+    # 4,3,2,7,8,2,3,1
+
+    for i in range(0, len(nums)):
+        # get index for current value
+        index = abs(nums[i]) - 1
+        if nums[index] > 0:
+            nums[index] *= -1
+
+    return [i + 1 for i in range(0, len(nums)) if nums[i] > 0]
