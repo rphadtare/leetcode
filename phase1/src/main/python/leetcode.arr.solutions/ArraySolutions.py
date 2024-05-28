@@ -1,3 +1,6 @@
+import math
+
+
 ###
 #
 # Input: nums = [3,2,2,3], val = 3
@@ -163,3 +166,32 @@ def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
             nums[index] *= -1
 
     return [i + 1 for i in range(0, len(nums)) if nums[i] > 0]
+
+
+##
+#
+#   Input: nums = [-4,-1,0,3,10]
+#   Output: [0,1,9,16,100]
+#   Explanation: After squaring, the array becomes [16,1,0,9,100].
+#   After sorting, it becomes [0,1,9,16,100].
+#
+#   Input: nums = [-7,-3,2,3,11]
+#   Output: [4,9,9,49,121]
+# #
+
+def sortedSquares(self, nums: list[int]) -> list[int]:
+    result = [i for i in nums]
+    leftIndex, rightIndex = 0, len(nums) - 1
+    pos = rightIndex
+
+    while leftIndex <= rightIndex:
+        if math.fabs(nums[leftIndex]) > math.fabs(nums[rightIndex]):
+            result[pos] = int(math.fabs(nums[leftIndex] ** 2))
+            leftIndex += 1
+        else:
+            result[pos] = int(math.fabs(nums[rightIndex] ** 2))
+            rightIndex -= 1
+
+        pos -= 1
+
+    return result
