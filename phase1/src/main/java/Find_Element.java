@@ -43,6 +43,7 @@ public class Find_Element {
         int result = solution(new int[]{2,1,3,5,7,4});
         System.out.println("Result: " + result);
 
+
     }
 
 
